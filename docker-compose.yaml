@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  php-mvc-service:
+    build: .
+    container_name: php-mvc-container
+    restart: always
+    env_file:
+      - Env/.env
+    ports:
+      - "7000:80"
+    volumes:
+      - ./src/Public:/var/www/html
+      - ./src/App:/var/www/App

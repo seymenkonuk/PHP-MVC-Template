@@ -1,0 +1,13 @@
+RewriteEngine On
+DirectorySlash Off
+
+# Dizin isteklerini index.php'ye yönlendir
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*)$ index.php [L,QSA]
+
+# Gerçek dosya isteklerini index.php'ye yönlendir
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.*)$ index.php [L,QSA]
+
+# Diğer tüm istekleri index.php'ye yönlendir
+RewriteRule ^(.*)$ index.php [L,QSA]
